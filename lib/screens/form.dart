@@ -1,7 +1,9 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 
-class Form extends StatelessWidget {
-  const Form({super.key});
+class Add_todo extends StatelessWidget {
+  const Add_todo({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -10,7 +12,7 @@ class Form extends StatelessWidget {
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Form'),
+          title: const Text('Add_todo'),
           leading: const Icon(Icons.arrow_back),
         ),
         body: ListView(
@@ -19,7 +21,7 @@ class Form extends StatelessWidget {
             child:  Column(
               children:  [
                 // add title
-                  TextField(
+                  TextField( 
                     maxLines: 1,
                     decoration:  InputDecoration(
                     hintText: 'Picking package',
@@ -35,15 +37,12 @@ class Form extends StatelessWidget {
                     labelText: 'Subtitle',
                     )
                   ),
-                  ElevatedButton(onPressed: (){}, child: Text('Submit'))
+                  ElevatedButton(onPressed: (){}, child: Text('Submit'),)
               ],
             ),
             )
           ]
-        ),
-        floatingActionButton: FloatingActionButton(onPressed: (){},child: const Icon(Icons.add),
-
-         ),
+        )
       ),
     
   
