@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_flutter_app/screens/form.dart';
 import 'package:todo_flutter_app/screens/home.dart';
 
 void main() {
@@ -10,8 +11,12 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  Container(
-      child: Home(),
+    return  MaterialApp(
+     routes: {
+        '/form/':(context) => Todo(),
+      
+      },
+      home: Home(),
     );
   }
 }

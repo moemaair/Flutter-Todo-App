@@ -1,9 +1,9 @@
-// ignore_for_file: camel_case_types
+
 
 import 'package:flutter/material.dart';
 
-class Add_todo extends StatelessWidget {
-  const Add_todo({super.key});
+class Todo extends StatelessWidget {
+  const Todo({super.key});
 
   @override
   Widget build(BuildContext context) {
