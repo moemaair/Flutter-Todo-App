@@ -12,10 +12,15 @@ class Todo extends StatelessWidget {
       theme: ThemeData.dark(),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Add_todo'),
-          leading: const Icon(Icons.arrow_back),
+          title: const Text('Add todo'),
+          leading: GestureDetector(
+            onTap: (){
+             Navigator.of(context).pop(null);
+            },
+            child: const Icon(Icons.arrow_back),
+          ),
         ),
-        body: ListView(
+          body: ListView(
           children:  [
             Padding(padding:const EdgeInsets.all(10),
             child:  Column(

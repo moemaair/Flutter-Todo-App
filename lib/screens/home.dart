@@ -36,8 +36,12 @@ class _HomeState extends State<Home> {
             },
           )),
       floatingActionButton: FloatingActionButton.extended(
-          onPressed: (){
-             Navigator.pushNamedAndRemoveUntil(context, '/form/', (route) => false);
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(builder: (BuildContext context){
+                return Todo();
+              })
+            );
           },
           label: Text('Add todo'),
           foregroundColor: Colors.black,
