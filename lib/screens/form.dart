@@ -26,23 +26,49 @@ class Todo extends StatelessWidget {
             child:  Column(
               children:  [
                 // add title
-                  TextField( 
-                    maxLines: 1,
-                    decoration:  InputDecoration(
-                    hintText: 'Picking package',
-                    labelText: 'Title',
-                    )
-                  ),
-                // add subtitle  
-                  TextField(
-                    minLines:2,
-                    maxLines: 5,
-                    decoration:  InputDecoration(
-                    hintText: 'downtown post office Box2343',
-                    labelText: 'Subtitle',
-                    )
-                  ),
-                  ElevatedButton(onPressed: (){}, child: Text('Submit'),)
+                  const TextField(
+                        maxLines: 1,
+                        obscureText: true,
+                        decoration:  InputDecoration(
+                          hintText: 'Picking package',
+                          labelText: 'Title',
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                    width: 1, color: Colors.blueAccent
+                                )
+                            )
+                        )
+                    ),
+                    const SizedBox(
+                      height: 30,
+                    ),
+                // add subtitle
+                    const TextField(
+                      minLines:2,
+                      maxLines: 5,
+                      decoration:  InputDecoration(
+                        hintText: 'downtown post office Box 2343',
+                        labelText: 'Subtitle',
+                        enabledBorder: OutlineInputBorder(
+                          borderSide: BorderSide(
+                            width: 1, color: Colors.blueAccent
+                          )
+                        )
+                      )
+                     )
+                ,
+
+              const SizedBox(
+              height: 10,
+            ),
+                  Container(
+                    child: ElevatedButton(onPressed: (){},
+                      style: ElevatedButton.styleFrom(
+                        primary: Colors.greenAccent,
+                        minimumSize: Size.fromHeight(45)
+                      ),
+                      child: Text('Submit'),),
+                  )
               ],
             ),
             )
