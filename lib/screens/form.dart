@@ -1,6 +1,7 @@
 
 
 import 'package:flutter/material.dart';
+import 'package:todo_flutter_app/screens/home.dart';
 
 class Todo extends StatelessWidget {
   const Todo({super.key});
@@ -61,14 +62,18 @@ class Todo extends StatelessWidget {
               const SizedBox(
               height: 10,
             ),
-                  Container(
-                    child: ElevatedButton(onPressed: (){},
+                ElevatedButton(
+                      onPressed: (){
+                        func(context);
+
+                    },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.greenAccent,
                         minimumSize: Size.fromHeight(45)
                       ),
-                      child: Text('Submit'),),
-                  )
+                      child: Text('Submit'),
+                    ),
+
               ],
             ),
             )
@@ -78,5 +83,10 @@ class Todo extends StatelessWidget {
     
   
     );
+  }
+
+  void func(BuildContext context) {
+    var snackBar = SnackBar(content: Text('sub'));
+    ScaffoldMessenger.of(context).showSnackBar(snackBar);
   }
 }
