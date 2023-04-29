@@ -11,14 +11,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  var items = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
+  var items = [for (var i = 1; i <= 100; i++) i];
+
+
   @override
   Widget build(BuildContext context) {
+    debugShowCheckedModeBanner: false;
     return MaterialApp(
-        home: Scaffold(
-      appBar: AppBar(
+      theme: ThemeData.dark(),
+      home: Scaffold(
+       appBar: AppBar(
         title: Text('Flutter Todo App'),
-      ),
+       ),
       body: Padding(
           padding: EdgeInsets.all(0),
           child: ListView.builder(
@@ -26,12 +30,19 @@ class _HomeState extends State<Home> {
             itemBuilder: (context, index) {
               final item = items[index];
 
-              return ListTile(
-                leading: CircleAvatar(
-                  child: Text('${index + 1}'),
-                  backgroundColor: Colors.amber,
+              return GestureDetector(
+                onTap: (){
+                  final snackBar = SnackBar(content: Text('${index + 1}'));
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                },
+                child: ListTile(
+                  leading: CircleAvatar(
+                    child: Text('${index + 1}'),
+                    backgroundColor: Colors.black,
+                  ),
+                  title: Text('Title'),
+                  subtitle: Text("subtile"),
                 ),
-                title: Text(item.toString()),
               );
             },
           )),
