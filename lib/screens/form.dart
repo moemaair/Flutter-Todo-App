@@ -33,11 +33,7 @@ class Todo extends StatelessWidget {
                         decoration:  InputDecoration(
                           hintText: 'Picking package',
                           labelText: 'Title',
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                    width: 1, color: Colors.blueAccent
-                                )
-                            )
+                          border:  OutlineInputBorder()
                         )
                     ),
                     const SizedBox(
@@ -50,14 +46,9 @@ class Todo extends StatelessWidget {
                       decoration:  InputDecoration(
                         hintText: 'downtown post office Box 2343',
                         labelText: 'Subtitle',
-                        enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
-                            width: 1, color: Colors.blueAccent
-                          )
+                        border: OutlineInputBorder()
                         )
-                      )
-                     )
-                ,
+                      ),
 
               const SizedBox(
               height: 10,
@@ -65,7 +56,6 @@ class Todo extends StatelessWidget {
                 ElevatedButton(
                       onPressed: (){
                         func(context);
-
                     },
                       style: ElevatedButton.styleFrom(
                         primary: Colors.greenAccent,
