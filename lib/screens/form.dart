@@ -29,7 +29,6 @@ class Todo extends StatelessWidget {
                 // add title
                   const TextField(
                         maxLines: 1,
-                        obscureText: true,
                         decoration:  InputDecoration(
                           hintText: 'Picking package',
                           labelText: 'Title',
